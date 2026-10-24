@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan your stay at HOOD Pattaya. Explore the hostel, check booking options, and send a reservation request.">
+  <meta name="theme-color" content="#171a19">
+  <title>HOOD Pattaya | Stay Different. Feel at Home.</title>
+  <style>
+    :root{--ink:#171a19;--cream:#f4efe6;--sand:#d8b98b;--muted:#a9aaa3;--line:rgba(255,255,255,.15);--panel:#222725}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(23,26,25,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.16em;font-size:1.05rem}.brand span{color:var(--sand)}
+    nav{display:flex;gap:24px;align-items:center;font-size:.9rem;color:#e0ddd6}nav a:hover{color:var(--sand)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--sand);color:#171a19;font-weight:800;padding:13px 19px;border-radius:3px;border:1px solid var(--sand);transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}.btn.ghost{background:transparent;color:var(--cream);border-color:rgba(244,239,230,.45)}
+    .hero{min-height:650px;display:grid;align-items:end;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(10,14,13,.88),rgba(10,14,13,.38)),linear-gradient(0deg,rgba(10,14,13,.8),transparent 70%),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-inner{padding:100px 0 78px;max-width:760px}.eyebrow{color:var(--sand);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+    h1{font-size:clamp(3rem,8vw,6.3rem);line-height:.98;letter-spacing:-.055em;margin:18px 0 24px;max-width:760px}
+    .lead{font-size:clamp(1rem,2vw,1.2rem);color:#e4e0d8;max-width:580px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:48px;color:#d4d0c8;font-size:.83rem}.trust span:before{content:"✦";color:var(--sand);margin-right:8px}
+    section{padding:86px 0}.section-head{max-width:680px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.04em;margin:10px 0 16px}.section-head p{color:#bdbeb7}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:25px;min-height:190px}.card .num{color:var(--sand);font-size:.8rem;letter-spacing:.12em}.card h3{margin:16px 0 8px;font-size:1.22rem}.card p{margin:0;color:#bdbeb7;font-size:.94rem}
+    .rooms{background:var(--cream);color:var(--ink)}.rooms .section-head p{color:#595d58}.room-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch}
+    .photo-placeholder{min-height:340px;background:linear-gradient(135deg,#b5a58e,#6d776e);display:flex;align-items:end;padding:22px;color:white;background-size:cover;background-position:center}
+    .photo-placeholder small{background:rgba(15,20,18,.72);padding:8px 12px}.room-copy{padding:28px;background:#e8e0d2}.room-copy h3{font-size:1.7rem;line-height:1.1;margin:0 0 14px}.room-copy p{color:#555950}.note{font-size:.82rem;color:#6a6b64;margin-top:20px}
+    .booking{background:#222725}.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.booking-panel{border:1px solid var(--line);padding:28px;background:#1b201e}.booking-panel h3{font-size:1.4rem;margin:0 0 10px}.booking-panel p{color:#bdbeb7}.booking-panel .btn{margin-top:12px}
+    .form-note{font-size:.82rem;color:#a9aaa3}.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.map-box{min-height:280px;background:#252b28;border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:28px;color:#c4c5be}
+    .faq{border-top:1px solid var(--line);padding:18px 0}.faq h3{font-size:1rem;margin:0 0 7px}.faq p{margin:0;color:#bdbeb7}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#aaa;font-size:.84rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:760px){nav{gap:12px;font-size:.8rem}nav .optional{display:none}.nav{height:66px}.hero{min-height:600px}.hero-inner{padding:75px 0 52px}.grid,.room-grid,.booking-grid,.location-grid{grid-template-columns:1fr}.photo-placeholder{min-height:260px}section{padding:64px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">HOOD <span>PATTAYA</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#experience">The vibe</a><a href="#rooms" class="optional">Stay</a><a href="#location" class="optional">Location</a><a href="#book" class="btn">Book now ↗</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">A hostel stay in Pattaya, Thailand</div>
+      <h1>Stay different.<br>Feel at home.</h1>
+      <p class="lead">Make Pattaya your base. Find your space, meet the city at your own pace, and start planning your stay at HOOD.</p>
+      <div class="actions"><a class="btn" href="#book">Find your stay ↗</a><a class="btn ghost" href="#experience">Explore HOOD</a></div>
+      <div class="trust"><span>Simple booking options</span><span>Made for curious travellers</span><span>Pattaya, Thailand</span></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">The HOOD experience</div><h2>A good stay is more than a bed.</h2><p>Use this space to show what makes HOOD Pattaya special. Replace these starter descriptions with the hostel's confirmed facilities and personality before publishing.</p></div>
+      <div class="grid">
+        <article class="card"><div class="num">01 / YOUR SPACE</div><h3>A place to recharge</h3><p>Comfortable accommodation for resting between days out in Pattaya. Add confirmed room types and features here.</p></article>
+        <article class="card"><div class="num">02 / YOUR PACE</div><h3>Your trip, your way</h3><p>Plan beach days, food stops, nightlife, and local discoveries from your base in the city.</p></article>
+        <article class="card"><div class="num">03 / YOUR PEOPLE</div><h3>Come as you are</h3><p>Travelling solo or with friends? Tell guests what to expect from the atmosphere and shared spaces.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms" id="rooms">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Find your stay</div><h2>Make room for the trip.</h2><p>Check current room options and prices through the booking channel before confirming a reservation.</p></div>
+      <div class="room-grid">
+        <div class="photo-placeholder" role="img" aria-label="Replace with an authentic HOOD Pattaya room photo"><small>Replace with an authentic room photo</small></div>
+        <div class="room-copy"><h3>Your stay should fit your plans.</h3><p>Whether you are visiting for a quick escape or a longer trip, choose the room option that suits your dates and group.</p><p><strong>Room types:</strong> Add confirmed room categories, occupancy, amenities, check-in/check-out times, and accessibility details here.</p><a class="btn" href="#book">Check booking options ↗</a><p class="note">Room names, facilities, rates, and availability have intentionally not been invented.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="book">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Reservations</div><h2>Ready when you are.</h2><p>Choose the booking route that works best for you. Direct requests are not confirmed until HOOD Pattaya replies and verifies availability.</p></div>
+      <div class="booking-grid">
+        <div class="booking-panel"><div class="eyebrow">Option 01</div><h3>Book through a platform</h3><p>Check listed room options, dates, current rates, and the platform's payment and cancellation terms.</p><a class="btn" href="https://www.booking.com/hotel/th/hood-hostel.html" target="_blank" rel="noopener">View Booking.com listing ↗</a><p class="form-note">Please verify that this listing belongs to your property and is still the preferred listing before launch.</p></div>
+        <div class="booking-panel"><div class="eyebrow">Option 02</div><h3>Request a direct booking</h3><p>Send your preferred dates and guest details. The team can confirm availability, total price, and payment instructions manually.</p><a class="btn ghost" href="#direct-request">Set up direct request form ↓</a><p class="form-note">Add your Google Form URL to this button before launch. Do not ask guests to send card details in a form or message.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="direct-request">
+    <div class="wrap location-grid">
+      <div>
+        <div class="eyebrow">Direct reservations</div><h2>Make the first step easy.</h2>
+        <p style="color:#bdbeb7">Create a free Google Form with: full name, email or phone, check-in date, check-out date, number of guests, room preference, and special requests. Link it here once created.</p>
+        <a class="btn" href="https://forms.google.com/" target="_blank" rel="noopener">Create free request form ↗</a>
+        <p class="form-note">Form responses can be collected and reviewed in Google Forms or saved to a linked Google Sheet.</p>
+      </div>
+      <div class="map-box"><div><div class="eyebrow">Find HOOD Pattaya</div><p>Add the verified property address and embed its Google Maps location here.</p><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=HOOD+Hostel+Jomtien+Pattaya" target="_blank" rel="noopener">Search map ↗</a></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Good to know</div><h2>Before you arrive.</h2></div>
+      <div class="faq"><h3>When is my booking confirmed?</h3><p>A direct request is only a request. Wait for written confirmation of availability, total price, and payment instructions from the property.</p></div>
+      <div class="faq"><h3>How do I pay?</h3><p>For platform bookings, follow the payment terms shown by the platform. For direct bookings, use only payment instructions verified with HOOD Pattaya.</p></div>
+      <div class="faq"><h3>Where can I find check-in details?</h3><p>Add the confirmed check-in and check-out times, reception hours, late-arrival process, and contact details before launch.</p></div>
+      <div class="faq"><h3>What should I do if my plans change?</h3><p>Check the cancellation and amendment policy attached to your specific booking before making changes.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>HOOD PATTAYA</strong><br><span>Stay different. Feel at home.</span></div><div>© <span id="year"></span> HOOD Pattaya · Update contact and policy details before launch.</div></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
